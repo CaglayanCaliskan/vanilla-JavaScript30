@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-image: url('https://images4.alphacoders.com/457/thumb-1920-4574.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  margin: auto;
+  margin-top: 200px;
+  flex-wrap: wrap;
+}
+
+.kit {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 5px 2px 3px black;
+  border: 5px solid black;
+  width: 120px;
+  height: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: active 0.3s ease-in;
+}
+
+.playing {
+  transform: scale(0.9);
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #ffc600;
+}
+
+span {
+  font-size: 20px;
+  color: rgb(236, 205, 30);
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+}
