@@ -10,10 +10,13 @@ const btnL = document.getElementById('l');
 
 function fire(e) {
   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  const audio = document.querySelector(`audio[data-key = '${e.keyCode}']`);
   if (!key) {
     return;
   }
   key.classList.toggle('playing');
+  audio.currentTime = 0;
+  audio.play();
 
   setTimeout(() => {
     key.classList.toggle('playing');
