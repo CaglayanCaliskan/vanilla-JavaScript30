@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #595260;
+}
+
+.clock {
+  background-image: url('./Frame\ 1.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+
+  position: relative;
+
+  box-shadow: 0 -5px 5px, 0px 5px 5px, 5px 0px 5px, -5px 0px 5px;
+}
+
+.clock::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.hour {
+  --rotation: 0;
+  position: absolute;
+  width: 6px;
+  height: 80px;
+  background-color: #ffd523;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 10px 10px 5px 5px;
+  box-shadow: 2px 2px 10px;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  z-index: 3;
+}
+.min {
+  --rotation: 0;
+  position: absolute;
+  width: 6px;
+  height: 120px;
+  background-color: #000;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 10px 10px 5px 5px;
+  box-shadow: 2px 2px 10px;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  z-index: 2;
+}
+
+.sec {
+  --rotation: 30;
+  position: absolute;
+  width: 2px;
+  height: 140px;
+  background-color: #b2b1b9;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 10px 10px 5px 5px;
+  box-shadow: 2px 2px 10px;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  z-index: 1;
+}
