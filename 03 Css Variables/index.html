@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change it</title>
+  </head>
+  <body>
+    <header>
+      <h1>Change Variables with <span>JS</span></h1>
+    </header>
+    <section>
+      <div>
+        <label for="spacing">Spacing</label>
+        <input
+          type="range"
+          name="spacing"
+          id="spacing"
+          value="0"
+          data-sizing="px"
+        />
+      </div>
+      <div>
+        <label for="blur"> Blur </label>
+        <input type="range" name="blur" id="blur" value="0" data-sizing="px" />
+      </div>
+      <div>
+        <label for="color">Color</label>
+        input <input type="color" name="color" id="color"" data-sizing=""/>
+      </div>
+    </section>
+    <div class="container" id="container">
+      <img
+        src="https://images.unsplash.com/photo-1645771729688-951e911d2625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
+        alt=""
+      />
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        background: #193549;
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        padding: 20px 0px;
+        font-size: 1.5rem;
+      }
+      header span {
+        color: var(--color); /* variables */
+      }
+      section {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      @media screen and (max-width: 800px) {
+        section {
+          display: grid;
+          grid-template-columns: auto auto auto;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        header {
+          font-size: 1rem;
+        }
+      }
+
+      section label,
+      input {
+        margin: 15px;
+      }
+      .container {
+        height: 460px;
+        width: 380px;
+        margin-top: 40px;
+        background-color: var(--color);
+        filter: blur(var(--blur)); /* variables */
+        padding: var(--spacing);
+      }
+
+      .container img {
+        height: inherit;
+        padding: 10px;
+      }
+      #color {
+        initial-value: var(--color);
+      }
+      :root {
+        --color: #001;
+        --blur: 0px;
+        --spacing: 0px;
+      }
+    </style>
+    <script>
+      const inputs = document.querySelectorAll('input');
+
+      function handleUpdate() {
+        const annex = this.dataset.sizing || '';
+        console.log(annex);
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + annex
+        );
+      }
+
+      // console.log(
+      //   document.styleSheets[0].cssRules[11].style.getPropertyValue('--color')
+      // );
+
+      inputs.forEach((input) =>
+        input.addEventListener('mousemove', handleUpdate)
+      );
+      inputs.forEach((input) => input.addEventListener('change', handleUpdate));
+    </script>
+  </body>
+</html>
