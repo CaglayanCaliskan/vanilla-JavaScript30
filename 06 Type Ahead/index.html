@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Ahead</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" placeholder="City or State" class="search" />
+
+      <ul class="list">
+        <li><span class="name">Filter for a city </span></li>
+        <li><span class="name">or a state</span></li>
+      </ul>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #ffc600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        width: 500px;
+        margin: 60px auto 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .container input {
+        font-size: 40px;
+        text-align: center;
+        padding: 20px;
+        border: 10px solid #f7f7f7;
+        border-radius: 3px;
+        box-shadow: 0 0 5px black;
+      }
+      .container ul {
+        margin: auto;
+        width: 80%;
+      }
+
+      .container ul li {
+        list-style: none;
+        margin-bottom: 2px;
+        background: #f7f7f7;
+        font-size: 20px;
+        padding: 20px;
+        font-weight: 600;
+        text-align: start;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li .population {
+        font-size: 18px;
+        font-weight: 200;
+      }
+      .container ul li:nth-child(2n + 1) {
+        transform: perspective(100px) rotateX(-3deg) translateY(3px);
+      }
+      .container ul li:nth-child(2n) {
+        transform: perspective(100px) rotateX(3deg) translateY(3px);
+        margin-bottom: 4px;
+      }
+    </style>
+    <script>
+      const search = document.querySelector('.search');
+      const list = document.querySelector('.list');
+
+      const userAction = async () => {
+        let child = list.lastElementChild;
+        while (child) {
+          list.removeChild(child);
+          child = list.lastElementChild;
+        }
+
+        const response = await fetch(
+          'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json'
+        );
+        const myJson = await response.json();
+
+        myJson.map((item) => {
+          let yeniLi = document.createElement('li');
+
+          if (
+            item.city.toLowerCase().indexOf(search.value.toLowerCase()) >= 0 ||
+            item.state.toLowerCase().indexOf(search.value.toLowerCase()) >= 0
+          ) {
+            yeniLi.innerHTML = `<span class = 'name'>${item.city}, ${item.state}</span> <span class = 'population'>${item.population}</span> `;
+            list.appendChild(yeniLi);
+          }
+        });
+      };
+
+      search.addEventListener('keyup', userAction);
+    </script>
+  </body>
+</html>
