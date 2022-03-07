@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Detection</title>
+  </head>
+  <body>
+    <h1>Open console and press a key</h1>
+    <p style="font-style: italic">can u write "caglayan" shhh!</p>
+    <script>
+      const keyList = [];
+      const keyPress = (e) => {
+        if (keyList.length === 8) {
+          keyList.shift();
+        }
+        keyList.push(e.key);
+        console.log(e.key);
+        console.log(keyList);
+        if (keyList.join('') == 'caglayan') {
+          console.log('Ding...Ding... CAGLAYAN ... Ding ...Ding');
+        }
+      };
+      document.addEventListener('keyup', keyPress);
+    </script>
+  </body>
+</html>
