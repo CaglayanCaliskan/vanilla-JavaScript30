@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>Custom Video Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <video id="video" src="./652333414.mp4"></video>
+      <!-- controller -->
+
+      <div id="video-controller">
+        <div class="progress-back" id="bar-progress">
+          <div class="progress" id="progress"></div>
+        </div>
+        <div class="interactive">
+          <div class="inter left">
+            <label id="timer" for="progress" role="timer">00:00</label>
+          </div>
+          <div class="inter center">
+            <div class="btn btn-back" id="btn-back">
+              <span class="material-icons"> history </span>
+            </div>
+            <div class="btn btn-play" id="btn-play">
+              <span class="material-icons"> play_arrow </span>
+            </div>
+            <div class="btn btn-update" id="btn-update">
+              <span class="material-icons"> update </span>
+            </div>
+          </div>
+          <div class="inter right">
+            <div class="btn btn-sound" id="btn-sound">
+              <span class="material-icons"> volume_up </span>
+            </div>
+            <input type="range" name="" id="btn-volume" />
+            <div class="btn btn-full" id="btn-full">
+              <span class="material-icons"> fullscreen </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
