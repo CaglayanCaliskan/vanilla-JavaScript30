@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>LocalStorage</title>
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      enable-background="new 0 0 512 512"
+      xml:space="preserve"
+    >
+      <g>
+        <path
+          d="M495.9,425.3H16.1c-5.2,0-10.1,2.9-12.5,7.6c-2.4,4.7-2.1,10.3,0.9,14.6l39,56.4c2.6,3.8,7,6.1,11.6,6.1h401.7   c4.6,0,9-2.3,11.6-6.1l39-56.4c3-4.3,3.3-9.9,0.9-14.6C506,428.2,501.1,425.3,495.9,425.3z M449.4,481.8H62.6L43,453.6H469   L449.4,481.8z"
+        ></path>
+        <path
+          d="M158.3,122c7.8,0,14.1-6.3,14.1-14.1V43.4c0-7.8-6.3-14.1-14.1-14.1c-7.8,0-14.1,6.3-14.1,14.1v64.5   C144.2,115.7,150.5,122,158.3,122z"
+        ></path>
+        <path
+          d="M245.1,94.7c7.8,0,14.1-6.3,14.1-14.1V16.1c0-7.8-6.3-14.1-14.1-14.1C237.3,2,231,8.3,231,16.1v64.5   C231,88.4,237.3,94.7,245.1,94.7z"
+        ></path>
+        <path
+          d="M331.9,122c7.8,0,14.1-6.3,14.1-14.1V43.4c0-7.8-6.3-14.1-14.1-14.1s-14.1,6.3-14.1,14.1v64.5   C317.8,115.7,324.1,122,331.9,122z"
+        ></path>
+        <path
+          d="M9.6,385.2c5.3,2.8,11.8,1.9,16.2-2.2l50.6-47.7c56.7,46.5,126.6,71.9,198.3,71.9c0,0,0,0,0,0   c87.5,0,169.7-36.6,231.4-103.2c5-5.4,5-13.8,0-19.2c-61.8-66.5-144-103.2-231.4-103.2c-72,0-142.2,25.6-199,72.5l-50-47.1   c-4.4-4.1-10.9-5-16.2-2.2c-5.3,2.8-8.3,8.7-7.4,14.6l11.6,75L2.2,370.6C1.3,376.5,4.2,382.4,9.6,385.2z M380.9,230.8   c34.9,14.3,67.2,35.7,95.3,63.6c-10.1,10-20.8,19.2-31.9,27.5c-22.4-3.3-29.6-8.8-30.7-9.7c-4-5.7-11.8-7.7-18.1-4.4   c-6.9,3.6-9.5,12.2-5.9,19.1c1.9,3.5,7.3,10.3,22.4,16c-10.1,5.7-20.5,10.7-31.1,15.1C352.4,320.2,352.4,268.6,380.9,230.8z    M36.3,255.6l29.4,27.7c5.3,5,13.6,5.1,19.1,0.3c53.2-47.6,120.7-73.7,190-73.7c26.9,0,53.2,3.9,78.5,11.3   c-29.3,44.6-29.3,102,0,146.6c-25.3,7.4-51.6,11.3-78.5,11.3c-69,0-136.3-26-189.4-73.2c-2.7-2.4-13.4-6.3-19.1,0.3l-30.1,28.3   l5.7-40C42.2,293,36.3,255.6,36.3,255.6z"
+        ></path>
+        <circle cx="398.8" cy="273.8" r="14.1"></circle>
+      </g>
+    </svg>
+    <div class="container">
+      <h2>LOCAL TAPAS</h2>
+      <div id="list" class="list">
+        <ul>
+          <li class="todo">
+            <p>caglayan</p>
+          </li>
+          <li class="todo">
+            <p>caliskan</p>
+          </li>
+        </ul>
+      </div>
+      <form id="form">
+        <input id="input" type="text" placeholder="Item Name" />
+        <button id="button">+ Add Item</button>
+      </form>
+    </div>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Verdana, Tahoma, sans-serif;
+        font-size: 150%;
+      }
+      svg {
+        fill: white;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        padding: 10px;
+        margin-bottom: 50px;
+      }
+      .container {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .container h2 {
+        margin: 25px;
+      }
+      .list {
+        width: 400px;
+        margin: 0 25px;
+      }
+      .list ul {
+        list-style: none;
+      }
+      .list li {
+        display: flex;
+        box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.2);
+        text-align: start;
+      }
+
+      .list li p {
+        margin: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      form {
+        display: flex;
+        margin: 25px 25px;
+        justify-content: space-between;
+      }
+      form input {
+        width: 100%;
+        margin: 0 2px;
+        border: none;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        font-size: 1.5rem;
+      }
+      form button {
+        width: 150px;
+        margin: 0 2px;
+        font-size: 1.2rem;
+      }
+      .todo.done {
+        color: red;
+        text-decoration: line-through;
+      }
+    </style>
+    <script>
+      const form = document.getElementById('form');
+      const input = document.getElementById('input');
+      const button = document.getElementById('button');
+      const list = document.getElementById('list');
+
+      function addToDo(e) {
+        e.preventDefault();
+
+        const li = document.createElement('li');
+        li.classList = 'todo';
+        let todo = input.value;
+        AddToLocal(todo);
+        li.innerHTML = `<p> ${input.value}</p>`;
+        list.children[0].appendChild(li);
+        input.value = '';
+      }
+
+      function doneDoTo(e) {
+        const targetClass = e.target.parentElement.classList;
+        if (e.target.parentElement.tagName === 'LI') {
+          if (targetClass == 'todo done') {
+            targetClass.remove('done');
+          } else {
+            targetClass.add('done');
+          }
+        }
+      }
+
+      function AddToLocal(item) {
+        local = JSON.parse(localStorage.getItem('list'));
+        local.push(item);
+        localStorage.setItem('list', JSON.stringify(local));
+      }
+
+      function getToLocal() {
+        let local;
+        if (localStorage.getItem('list') === null) {
+          local = [];
+        } else {
+          local = JSON.parse(localStorage.getItem('list'));
+        }
+
+        local.forEach((item) => {
+          const li = document.createElement('li');
+          li.classList = 'todo';
+          li.innerHTML = `<p> ${item}</p>`;
+          list.children[0].appendChild(li);
+        });
+        localStorage.setItem('list', JSON.stringify(local));
+      }
+
+      form.addEventListener('submit', addToDo);
+      list.addEventListener('click', doneDoTo);
+      window.addEventListener('load', getToLocal);
+    </script>
+  </body>
+</html>
