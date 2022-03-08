@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide down</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Slide in on Scroll</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur
+        minima iusto quos similique vero. Maxime eveniet beatae nulla dolore
+        tempore nesciunt, alias adipisci esse est reprehenderit libero ex
+        accusantium?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur
+        minima iusto quos similique vero. Maxime eveniet beatae nulla dolore
+        tempore nesciunt, alias adipisci esse est reprehenderit libero ex
+        accusantium?
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, animi.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur
+        minima iusto quos similique vero. Maxime eveniet beatae nulla dolore
+        tempore nesciunt, alias adipisci esse est reprehenderit libero ex
+        accusantium?
+      </p>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1646622246349-45e6be3372a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+        id="img1"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur
+        minima iusto quos similique vero. Maxime eveniet beatae nulla dolore
+        tempore nesciunt, alias adipisci esse est reprehenderit libero ex
+        accusantium?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur
+        minima iusto quos similique vero. Maxime eveniet beatae nulla dolore
+        tempore nesciunt, alias adipisci esse est reprehenderit libero ex
+        accusantium?
+      </p>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1646493550983-19dd68932c3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
+        alt=""
+        width="300px"
+        id="img2"
+      />
+      <p>alias adipisci esse est reprehenderit libero ex accusantium?</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque atque ad
+        veritatis assumenda asperiores delectus quo, id nam quod aut impedit,
+        architecto dolorum dolorem accusantium, sunt accusamus ex a minima.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque atque ad
+        veritatis assumenda asperiores delectus quo, id nam quod aut impedit,
+        architecto dolorum dolorem accusantium, sunt accusamus ex a minima.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque atque ad
+        veritatis assumenda asperiores delectus quo, id nam quod aut impedit,
+        architecto dolorum dolorem accusantium, sunt accusamus ex a minima.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque atque ad
+        veritatis assumenda asperiores delectus quo, id nam quod aut impedit,
+        architecto dolorum dolorem accusantium, sunt accusamus ex a minima.
+      </p>
+      <img
+        class="img"
+        src="https://images.unsplash.com/photo-1646602482288-517fb9aafd02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+        alt=""
+        id="img3"
+      />
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut natus
+        <img
+          class="img"
+          src="https://images.unsplash.com/photo-1646597509695-d2f56911136b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=680&q=80"
+          id="img4"
+        />
+        blanditiis est voluptate neque eveniet, unde ut sunt quisquam ea,
+        placeat laborum animi architecto, consequuntur reiciendis consectetur
+        nemo tempora quas. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Aut natus blanditiis est voluptate neque eveniet, unde ut sunt
+        quisquam ea, placeat laborum animi architecto, consequuntur reiciendis
+        consectetur nemo tempora quas. Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Aut natus blanditiis est voluptate neque eveniet, unde
+        ut sunt quisquam ea, placeat laborum animi architecto, consequuntur
+        reiciendis consectetur nemo tempora quas.
+      </p>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #ffc600;
+        font-family: Helvetica, sans-serif;
+        font-size: 150%;
+        line-height: 40px;
+      }
+
+      .container {
+        margin: 100px auto;
+        background: #fff;
+        max-width: 700px;
+        padding: 10px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 15px 0;
+      }
+
+      #img1 {
+        float: right;
+        width: 480px;
+      }
+      #img2 {
+        float: left;
+        width: 280px;
+      }
+      #img3 {
+        float: left;
+        width: 280px;
+      }
+      #img4 {
+        float: right;
+        width: 180px;
+      }
+
+      .img {
+        opacity: 0;
+        transform: translateY(150px);
+        transition: all ease-in 1s;
+      }
+      .img.active {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    </style>
+    <script>
+      function debounce(func, wait = 20, immediate = true) {
+        var timeout;
+        return function () {
+          var context = this,
+            args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+      const photos = document.querySelectorAll('img');
+
+      function slider() {
+        photos.forEach((photo) => {
+          const screenAt = window.scrollY + window.innerHeight + photo.height;
+          const imgBottom = photo.offsetTop + photo.height;
+          const showImg = screenAt > photo.offsetTop;
+          const downShowImg = window.scrollY < imgBottom;
+          if (showImg && downShowImg) {
+            photo.classList.add('active');
+            console.log('active');
+          } else {
+            photo.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', debounce(slider));
+
+      // let fullbody = document.body.offsetHeight;
+      // let upHeight = window.scrollY;
+      // let screenHeight = window.innerHeight;
+
+      // console.log(upHeight + screenHeight);
+    </script>
+  </body>
+</html>
