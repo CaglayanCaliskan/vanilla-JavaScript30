@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouse Shadow</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 contenteditable>CAGLAYAN 😀</h1>
+    </div>
+
+    <style>
+      html {
+        color: black;
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+      }
+
+      h1 {
+        font-size: 100px;
+      }
+    </style>
+
+    <script>
+      const bodyHeight = document.body.scrollHeight;
+      const bodyWidth = document.body.scrollWidth;
+      const ourText = document.querySelector('.hero').children[0];
+
+      function moveIt(e) {
+        const { clientX: mouseX, clientY: mouseY } = e;
+        const valueX = Math.floor(bodyWidth / 2 - mouseX);
+        const valueY = Math.floor(bodyHeight / 2 - mouseY);
+
+        ourText.style.textShadow = `
+        ${valueX}px ${valueY}px 0 blue,
+        ${-valueX}px ${-valueY}px 0 red,
+        ${valueY}px ${valueX * -1}px 0 green,
+        ${valueY * -1}px ${valueX}px 0 cyan
+        `;
+      }
+
+      document.addEventListener('mousemove', moveIt);
+    </script>
+  </body>
+</html>
