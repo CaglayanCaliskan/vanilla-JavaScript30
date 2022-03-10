@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="list">
+      <ul></ul>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url('https://images.unsplash.com/44/C3EWdWzT8imxs0fKeKoC_blackforrest.JPG?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=2000&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=2000');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .list {
+        min-width: 400px;
+        background: ghostwhite;
+        padding: 10px;
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+      .list ul {
+        list-style: square;
+        font-size: 150%;
+      }
+      .list ul li {
+        padding: 10px;
+        margin: 15px 20px;
+        box-shadow: 0 2px 0 1px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+    <script>
+      const bands = [
+        'The Plot in You',
+        'The Devil Wears Prada',
+        'Pierce the Veil',
+        'Norma Jean',
+        'The Bled',
+        'Say Anything',
+        'The Midway State',
+        'We Came as Romans',
+        'Counterparts',
+        'Oh, Sleeper',
+        'A Skylit Drive',
+        'Anywhere But Here',
+        'An Old Dog',
+      ];
+
+      function strip(bandName) {
+        return bandName.replace(/^(a |the |an )/i, '').trim();
+      }
+
+      const sortedBands = bands.sort((a, b) => (strip(a) > strip(b) ? 1 : -1));
+      console.log(sortedBands.toString());
+
+      document.querySelector('.list').children[0].innerHTML = sortedBands
+        .map((item) => `<li>${item}</li>`)
+        .join('');
+    </script>
+  </body>
+</html>
