@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="one">
+      ONE
+      <div class="two">
+        TWO
+        <div class="three">THREE</div>
+      </div>
+    </div>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        width: 100%;
+        padding: 100px;
+      }
+      .one {
+        background: pink;
+      }
+      .two {
+        background: red;
+      }
+      .three {
+        background: grey;
+      }
+    </style>
+    <script>
+      const div = document.querySelectorAll('div');
+      function logText(e) {
+        console.log(this.classList.value);
+        // e.stopPropagation(); ///// this is stoping all bubbling issue
+      }
+      div.forEach((box) => box.addEventListener('click', logText));
+      //addEventListener third element can me ///{once: true}
+      //its mean--- this event be active only 1 time
+    </script>
+  </body>
+</html>
