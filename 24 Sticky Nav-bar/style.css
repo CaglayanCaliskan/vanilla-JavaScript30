@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 200vh;
+  background-color: rgb(238, 238, 238);
+}
+header {
+  height: 400px;
+  display: grid;
+  place-items: center;
+  background-image: url('https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=738&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+header h1 {
+  font-size: 6rem;
+  color: #fff;
+  text-shadow: 2px 2px black;
+}
+.nav {
+  height: 50px;
+  width: 100%;
+  display: grid;
+  background: black;
+  position: relative;
+  text-align: center;
+}
+.nav.fixed-nav {
+  position: fixed;
+  top: 0;
+}
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+}
+li {
+  flex: 1;
+  cursor: pointer;
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lost {
+  max-width: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.5s;
+}
+.lost.active {
+  max-width: 150px;
+}
+.lost a {
+  color: black;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+main {
+  max-width: 50%;
+  margin: auto;
+  background: white;
+  font-size: 2rem;
+  box-shadow: rgba(0, 0, 0, alpha);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sticky Nav</title>
+  </head>
+  <body>
+    <header>
+      <h1>Scroll Down</h1>
+    </header>
+    <nav id="nav-bar" class="nav">
+      <ul>
+        <li class="lost"><a href="">LOST</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Images</a></li>
+        <li><a href="">Locations</a></li>
+        <li><a href="">Maps</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="container">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aliquid
+          quam deleniti. Natus error quibusdam blanditiis impedit excepturi
+          repudiandae perspiciatis? Quaerat fuga corrupti fugiat magni corporis
+          quam placeat aliquid vero.
+        </p>
+        <br />
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aliquid
+          quam deleniti. Natus error quibusdam blanditiis impedit excepturi
+          repudiandae perspiciatis? Quaerat fuga corrupti fugiat magni corporis
+          quam placeat aliquid vero.
+        </p>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aliquid
+          quam deleniti. Natus error quibusdam blanditiis impedit excepturi
+          repudiandae perspiciatis? Quaerat fuga corrupti fugiat magni corporis
+          quam placeat aliquid vero. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ex aliquid quam deleniti. Natus error quibusdam
+          blanditiis impedit excepturi repudiandae perspiciatis? Quaerat fuga
+          corrupti fugiat magni corporis quam placeat aliquid vero.
+        </p>
+        <br />
+      </div>
+    </main>
+    <script>
+      const nav = document.getElementById('nav-bar');
+      const lost = document.querySelector('.lost');
+      console.dir(lost);
+      function atraksyon() {
+        if (scrollY >= 400) {
+          nav.classList.add('fixed-nav');
+          lost.classList.add('active');
+        } else {
+          nav.classList.remove('fixed-nav');
+          lost.classList.remove('active');
+        }
+      }
+      document.addEventListener('scroll', atraksyon);
+    </script>
+  </body>
+</html>
