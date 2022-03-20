@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Speed Control</title>
+  </head>
+  <body>
+    <h3 id="speed-text">speed</h3>
+    <div id="speed-bar">
+      <div class="speed"></div>
+    </div>
+
+    <video width="700px" controls>
+      <source src="../11 Custom Video Player/652333414.mp4" type="video/mp4" />
+    </video>
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://images.unsplash.com/photo-1647693891949-4e1a80b6b406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+      }
+      #speed-bar {
+        width: 700px;
+        height: 50px;
+        margin: 10px;
+        border-radius: 40px;
+        background: black;
+        overflow: hidden;
+      }
+      .speed {
+        background: linear-gradient(90deg, red, yellow);
+        height: 100%;
+        width: 20%;
+      }
+    </style>
+    <script>
+      const bar = document.getElementById('speed-bar');
+      const text = document.getElementById('speed-text');
+      const whiteBar = document.querySelector('.speed');
+      const video = document.querySelector('video');
+
+      function handleSpeed(e) {
+        const speed = e.clientX - e.target.offsetLeft;
+        text.innerText = Math.round(speed / 100) + 'xspeed';
+        whiteBar.style.width = `${speed}px`;
+        video.playbackRate = Math.round(speed / 100);
+      }
+
+      bar.addEventListener('mousemove', handleSpeed);
+    </script>
+  </body>
+</html>
