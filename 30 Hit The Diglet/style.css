@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background: darkseagreen;
+  font-family: 'Unkempt', cursive;
+  color: brown;
+  text-shadow: 1px 1px 1px black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.game {
+  width: 100vw;
+  height: 400px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: auto;
+}
+.hole {
+  overflow: hidden;
+  position: relative;
+  background-size: 120px;
+}
+.hole::after {
+  position: absolute;
+  bottom: -3px;
+  left: -10px;
+  content: '';
+  background: url(rock.png) bottom center no-repeat;
+  background-size: 120px;
+  width: 100%;
+  height: 70px;
+}
+
+.diglet {
+  background: url(diglet2.png) bottom center no-repeat;
+  background-size: 100px;
+  position: absolute;
+  top: 100%;
+  width: 95%;
+  height: 90%;
+  transition: all 0.4s;
+}
+
+.hole.up .diglet {
+  top: -14px;
+}
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  display: block;
+  font-size: 4rem;
+}
+button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  font-family: 'Unkempt', cursive;
+  background-color: brown;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 2rem;
+  margin: 25px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(90%);
+}
+span {
+  font-size: 3rem;
+  margin: 25px 0;
+}
