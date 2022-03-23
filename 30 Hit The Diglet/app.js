@@ -44,12 +44,8 @@ function startGame() {
 }
 function scoreBoard(e) {
   if (!e.isTrusted) return;
-  if (this.parentElement.className.match('up')) {
-    this.classList.remove('up');
-    score.textContent++;
-  } else {
-    return score.textContent--;
-  }
+  this.classList.remove('up');
+  score.textContent++;
 }
 
 startBtn.addEventListener('click', startGame);
