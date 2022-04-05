@@ -43,6 +43,6 @@
 - [27 Click and Drag](https://caglayancaliskan.github.io/vanilla-JavaScript30/27%20Click%20and%20Drag/)
 - [28 Video Speed Control](https://caglayancaliskan.github.io/vanilla-JavaScript30/28%20Video%20Speed%20Control/)
 - [29 Countdown Timer](https://caglayancaliskan.github.io/vanilla-JavaScript30/29%20Countdown%20Timer/)
-- [30 Hit The Diglet](https://caglayancaliskan.github.io/vanilla-JavaScript30/01-Drum%20Kit/)
+- [30 Hit The Diglet](https://caglayancaliskan.github.io/vanilla-JavaScript30/30%20Hit%20The%20Diglet/)
 
 
